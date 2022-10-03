@@ -17,7 +17,7 @@ $taskController = new TaskController();
 
 // tabla de ruteo
 switch ($params[0]) {
-    case '':
+    case 'home':
         
         break;
     case 'add':
