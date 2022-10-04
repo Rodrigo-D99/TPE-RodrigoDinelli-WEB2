@@ -1,8 +1,8 @@
 <?php
-require_once './app/models/rotiseria.model.php';
-require_once './app/views/rotiseria.view.php';
+require_once './app/model/rotiseria.model.php';
+require_once './app/view/rotiseria.view.php';
 
-class TaskController {
+class RotiseriaController {
     private $model;
     private $view;
 
@@ -17,7 +17,7 @@ class TaskController {
     }
 
     
-    function addTask() {
+    function addFoods() {
         // TODO: validar entrada de datos
 
         $name = $_POST['name'];

@@ -9,7 +9,7 @@ class RotiseriaModel{
     }
 
     public function getAllFoods(){
-        $query = $this->db->prepare("SELECT * FORM foods");
+        $query = $this->db->prepare("SELECT * FROM foods");
         $query->execute();
         $foods = $query->fetchAll(PDO::FETCH_OBJ);
         

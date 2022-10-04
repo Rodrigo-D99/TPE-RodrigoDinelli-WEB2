@@ -5,7 +5,7 @@ class FoodsView {
     private $smarty;
 
     public function __construct() {
-        $this->smarty = new Smarty(); // inicializo Smarty
+        $this->smarty = new Smarty(); // inicio Smarty
     }
 
     function showFoods($foods) {
@@ -13,9 +13,9 @@ class FoodsView {
         $this->smarty->assign('count', count($foods)); 
         $this->smarty->assign('foods', $foods);
 
-      /**
-       *   // mostrar el tpl
-       * $this->smarty->display('taskList.tpl');
-        */ 
+      
+         // mostrar el tpl
+       $this->smarty->display('rotiseria.tpl');
+        
     }
 }
