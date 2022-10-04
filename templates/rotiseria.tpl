@@ -4,7 +4,7 @@
 <ul>
     {foreach from=$foods item=$food }
         <li>
-        <span> <b>{$food->name}</b> - {$food->price}</span>
+        <span> <b>{$food->name}</b> --  ${$food->price}</span>
         </li>
     {/foreach}
 

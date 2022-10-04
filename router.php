@@ -21,15 +21,14 @@ switch ($params[0]) {
         $RotiseriaController->showFoods();
         break;
     case 'add':
-        
+        $RotiseriaController->addFoods();
         break;
     case 'delete':
         // obtengo el parametro de la acción
-       
+        $id = $params[1];
+        $RotiseriaController->deleteFoods($id);
         break;
-    case "":  
-        
-        break;
+   
     default:
         echo('404 Page not found');
         break;

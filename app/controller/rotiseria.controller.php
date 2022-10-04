@@ -28,6 +28,11 @@ class RotiseriaController {
 
         header("Location: " . BASE_URL); 
     }
+    
+    function deleteFoods($id){
+        $this->model->deleteFoodsById($id);
+        header("Location: ". BASE_URL);
+    }
    
     
 

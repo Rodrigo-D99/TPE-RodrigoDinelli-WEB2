@@ -26,18 +26,18 @@ class RotiseriaModel{
     }
 
 
-    /**
-     * Elimina una tarea dado su id.
-    *
-    *function deleteTaskById($id) {
-    *    $query = $this->db->prepare('DELETE FROM foods WHERE id = ?');
-    *    $query->execute([$id]);
-    *}
+    
+    //Elimina una tarea dado su id.
+    
+   function deleteFoodsById($id) {
+       $query = $this->db->prepare('DELETE FROM foods WHERE id = ?');
+        $query->execute([$id]);
+    }
 
-    *public function finalize($id) {
-     *   $query = $this->db->prepare('UPDATE task SET finalizada = 1 WHERE id = ?');
-    *    $query->execute([$id]);
-   *     // var_dump($query->errorInfo()); // y eliminar la redireccion
-  *  }
-*/
+   /**  public function finalize($id) {
+    *   $query = $this->db->prepare('UPDATE task SET finalizada = 1 WHERE id = ?');
+    *   $query->execute([$id]);
+    *   // var_dump($query->errorInfo()); // y eliminar la redireccion
+   *}*/
+
 }   
