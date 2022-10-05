@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.1
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 04-10-2022 a las 00:58:32
--- Versión del servidor: 10.4.8-MariaDB
--- Versión de PHP: 7.3.11
+-- Tiempo de generación: 05-10-2022 a las 20:13:40
+-- Versión del servidor: 10.4.24-MariaDB
+-- Versión de PHP: 8.1.6
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -30,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
-  `name` varchar(100) NOT NULL,
+  `name` varchar(50) NOT NULL,
   `description` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -39,8 +38,11 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id_category`, `name`, `description`) VALUES
-(1, 'milanesa de ternera', 'milanesa al horno o frita'),
-(2, 'pizza de muzzarela', 'oregano y muzzarela');
+(1, 'Milanesa de pollo', 'Una milanesa de pollo'),
+(2, 'Milanesa de ternera', 'Una milanesa de ternera'),
+(3, 'Pizza de Mozzarela', 'Contiene mozzarella y orégano'),
+(4, 'Pizza Calabreza', 'Contiene mozzarella y salame'),
+(5, 'Pizza Especial', 'Contiene mozzarella, paleta y morron');
 
 -- --------------------------------------------------------
 
@@ -49,7 +51,7 @@ INSERT INTO `categories` (`id_category`, `name`, `description`) VALUES
 --
 
 CREATE TABLE `foods` (
-  `id` int(11) NOT NULL,
+  `Id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `id_category_fk` int(11) NOT NULL
@@ -59,8 +61,11 @@ CREATE TABLE `foods` (
 -- Volcado de datos para la tabla `foods`
 --
 
-INSERT INTO `foods` (`id`, `name`, `price`, `id_category_fk`) VALUES
-(3, 'milanesa', '850', 1);
+INSERT INTO `foods` (`Id`, `name`, `price`, `id_category_fk`) VALUES
+(1, 'Milanesa de pollo', '600', 1),
+(2, 'Milanesa de ternera', '630', 2),
+(3, 'Pizza de Mozzarela', '900', 3),
+(4, 'Pizza Calabreza', '1050', 4);
 
 --
 -- Índices para tablas volcadas
@@ -76,7 +81,7 @@ ALTER TABLE `categories`
 -- Indices de la tabla `foods`
 --
 ALTER TABLE `foods`
-  ADD PRIMARY KEY (`id`),
+  ADD PRIMARY KEY (`Id`),
   ADD KEY `id_category_fk` (`id_category_fk`);
 
 --
@@ -87,13 +92,13 @@ ALTER TABLE `foods`
 -- AUTO_INCREMENT de la tabla `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_category` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT de la tabla `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- Restricciones para tablas volcadas

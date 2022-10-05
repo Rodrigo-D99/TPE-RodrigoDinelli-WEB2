@@ -3,11 +3,14 @@
 
 <ul>
     {foreach from=$foods item=$food }
-        <li>
+        <li class='
+        list-group-item d-flex justify-content-between align-items-center'>
         <span> <b>{$food->name}</b> --  ${$food->price}</span>
-        </li>
+       <a href='delete/{$food->id}' type='button' class='btn btn-danger'>Borrar</a> 
+       </li>
     {/foreach}
 
     <p class="mt-3"><small>Mostrando {$count} comidas</small></p>
+    
 </ul>
 {include file="footer.tpl"}
