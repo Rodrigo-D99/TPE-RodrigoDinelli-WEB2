@@ -8,25 +8,27 @@ class RotiseriaController {
 
     public function __construct() {
         $this->model = new RotiseriaModel();
-        $this->view = new FoodsView();
+        $this->view = new FoodsView();  
+            
     }
-
-    public function showFoods() {
+        public function showFood() {
         $foods = $this->model->getAllFoods();
         $this->view->showFoods($foods);
-    }
-
-    
+        }
     function addFoods() {
         // TODO: validar entrada de datos
+       
 
-        $name = $_POST['name'];
+        $name = $_POST['names'];
         $price = $_POST['price'];
+        $id_categories_fk= $_POST['id_categories_fk'];
         
 
-        $id = $this->model->insertFoods($name, $price);
-
-        header("Location: " . BASE_URL); 
+        $id = $this->model->insertFoods($name, $price, $id_categories_fk);
+        
+        header("Location: ". BASE_URL);
+        
+ 
     }
     
     function deleteFoods($id){

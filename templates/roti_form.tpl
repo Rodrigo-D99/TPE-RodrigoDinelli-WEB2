@@ -2,29 +2,34 @@
     <div class="row">
         <div class="col-9">
             <div class="form-group">
-                <label>Título</label>
-                <input name="title" type="text" class="form-control">
+                <label>Ingresar nombre de la comida</label>
+                <input name="names" type="text" class="form-control">
             </div>
         </div>
 
-      <!-- <div class="col-3">
+       <div class="col-3">
             <div class="form-group">
-                <label>Prioridad</label>
-                <select name="priority" class="form-control">
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
+                <label>Tipo de comida</label>
+                <select name="id_categories_fk" class="form-control">
+                    <option value="0">Seleccione una opcion</option>
+                    <option value="1">milanesa</option>
+                    <option value="2">pizza</option>
+                    <option value="3">papas</option>
+                    <option value="4">carne</option>
+                    <option value="5">pollo</option>
                 </select>
             </div>
-        </div> -->
+        </div> 
     </div>
 
+    
     <div class="form-group">
-        <label>Descripcion</label>
-        <textarea name="description" class="form-control" rows="3"></textarea>
+        <label>Añade una descripcion</label>
+        <textarea name="descriptions" class="form-control" rows="3"></textarea>
     </div>
-
-    <button type="submit" class="btn btn-primary mt-2">Guardar</button>
+    <div class="form-group">
+        
+        <input name="price" type="number" class="form_control" placeholder="Precio">
+        </div>
+    <button type="submit" class="btn btn-primary mt-2">Cargar</button>
 </form>

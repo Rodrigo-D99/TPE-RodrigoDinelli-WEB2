@@ -18,7 +18,7 @@ $RotiseriaController = new RotiseriaController();
 // tabla de ruteo
 switch ($params[0]) {
     case 'home':
-        $RotiseriaController->showFoods();
+        $RotiseriaController->showFood();
         break;
     case 'add':
         $RotiseriaController->addFoods();
@@ -30,6 +30,6 @@ switch ($params[0]) {
         break;
    
     default:
-        echo('404 Page not found');
+        echo('error por peton');
         break;
 }

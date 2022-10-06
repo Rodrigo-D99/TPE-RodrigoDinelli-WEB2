@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 05-10-2022 a las 20:13:40
+-- Tiempo de generación: 06-10-2022 a las 17:34:56
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -29,15 +29,15 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
-  `description` varchar(255) NOT NULL
+  `names` varchar(50) NOT NULL,
+  `descriptions` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categories`
 --
 
-INSERT INTO `categories` (`id_category`, `name`, `description`) VALUES
+INSERT INTO `categories` (`id_category`, `names`, `descriptions`) VALUES
 (1, 'Milanesa de pollo', 'Una milanesa de pollo'),
 (2, 'Milanesa de ternera', 'Una milanesa de ternera'),
 (3, 'Pizza de Mozzarela', 'Contiene mozzarella y orégano'),
@@ -52,7 +52,7 @@ INSERT INTO `categories` (`id_category`, `name`, `description`) VALUES
 
 CREATE TABLE `foods` (
   `Id` int(11) NOT NULL,
-  `name` varchar(50) NOT NULL,
+  `names` varchar(50) NOT NULL,
   `price` decimal(10,0) NOT NULL,
   `id_category_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -61,11 +61,16 @@ CREATE TABLE `foods` (
 -- Volcado de datos para la tabla `foods`
 --
 
-INSERT INTO `foods` (`Id`, `name`, `price`, `id_category_fk`) VALUES
+INSERT INTO `foods` (`Id`, `names`, `price`, `id_category_fk`) VALUES
 (1, 'Milanesa de pollo', '600', 1),
 (2, 'Milanesa de ternera', '630', 2),
 (3, 'Pizza de Mozzarela', '900', 3),
-(4, 'Pizza Calabreza', '1050', 4);
+(4, 'Pizza Calabreza', '1050', 4),
+(5, 'dasadsd', '232', 2),
+(6, 'dasadsd', '232', 2),
+(7, 'fsaf', '321', 2),
+(10, 'dasda', '13131', 2),
+(11, 'aaaaaa', '31231', 3);
 
 --
 -- Índices para tablas volcadas
@@ -98,7 +103,7 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas

@@ -5,7 +5,7 @@
     {foreach from=$foods item=$food }
         <li class='
         list-group-item d-flex justify-content-between align-items-center'>
-        <span> <b>{$food->name}</b> --  ${$food->price}</span>
+        <span> <b>{$food->names}</b> --  ${$food->price} Contiene: {$food->descriptions}</span>
        <a href='delete/{$food->id}' type='button' class='btn btn-danger'>Borrar</a> 
        </li>
     {/foreach}

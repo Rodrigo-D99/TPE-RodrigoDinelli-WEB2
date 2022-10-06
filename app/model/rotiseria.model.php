@@ -8,36 +8,34 @@ class RotiseriaModel{
         $this->db = new PDO('mysql:host=localhost;'.'dbname=db_rotiseria;charset=utf8', 'root', '');
     }
 
-    public function getAllFoods(){
-        $query = $this->db->prepare("SELECT * FROM foods");
+    public function getAllFoods(){     
+        $query = $this->db->prepare("SELECT foods.*,categories.names as producto, categories.descriptions  FROM foods JOIN categories ON foods.id_category_fk = categories.id_category");
         $query->execute();
         $foods = $query->fetchAll(PDO::FETCH_OBJ);
-        
+         
         return $foods;
     }
+    
     /**
-     * Inserta una tarea en la base de datos.
+     * Inserta una comida en la base de datos.
      */
-    public function insertFoods($name, $price) {
-        $query = $this->db->prepare("INSERT INTO foods (name, price) VALUES (?, ?)");
-        $query->execute([$name, $price]);
+    public function insertFoods($name, $price, $id_category_fk) {
+        
+        $query = $this->db->prepare("INSERT INTO foods(names, price, id_category_fk) VALUES (?, ?,?)");
+        
+        $query->execute([$name, $price, $id_category_fk]);
 
         return $this->db->lastInsertId();
+        var_dump($query->errorInfo());
     }
 
 
     
-    //Elimina una tarea dado su id.
+    //Elimina una comida dado su id.
     
    function deleteFoodsById($id) {
        $query = $this->db->prepare('DELETE FROM foods WHERE id = ?');
         $query->execute([$id]);
     }
 
-   /**  public function finalize($id) {
-    *   $query = $this->db->prepare('UPDATE task SET finalizada = 1 WHERE id = ?');
-    *   $query->execute([$id]);
-    *   // var_dump($query->errorInfo()); // y eliminar la redireccion
-   *}*/
-
-}   
+}

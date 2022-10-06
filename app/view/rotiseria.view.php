@@ -10,6 +10,7 @@ class FoodsView {
 
     function showFoods($foods) {
         // asigno variables al tpl smarty
+        
         $this->smarty->assign('count', count($foods)); 
         $this->smarty->assign('foods', $foods);
 
