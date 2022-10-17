@@ -26,7 +26,7 @@ class RotiseriaModel{
         $query->execute([$name, $price, $id_category_fk]);
 
         return $this->db->lastInsertId();
-        var_dump($query->errorInfo());
+        
     }
 
 
@@ -38,4 +38,13 @@ class RotiseriaModel{
         $query->execute([$id]);
     }
 
+    /* public function updateFoods($id) {
+        
+        $query = $this->db->prepare("UPDATE foods WHERE ID=?");
+        
+        $query->execute([$id]);
+
+        return $this->db->lastInsertId();
+        
+    }*/
 }

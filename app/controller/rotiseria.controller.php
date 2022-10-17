@@ -15,6 +15,7 @@ class RotiseriaController {
         $foods = $this->model->getAllFoods();
         $this->view->showFoods($foods);
         }
+        
     function addFoods() {
         // TODO: validar entrada de datos
        
