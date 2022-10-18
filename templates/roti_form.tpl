@@ -11,12 +11,12 @@
             <div class="form-group">
                 <label>Tipo de comida</label>
                 <select name="id_categories_fk" class="form-control">
-                    <option value="0">Seleccione una opcion</option>
-                    <option value="1">milanesa</option>
-                    <option value="2">pizza</option>
-                    <option value="3">papas</option>
-                    <option value="4">carne</option>
-                    <option value="5">pollo</option>
+                    <option value="-1">Seleccione una opcion</option>
+                    
+                    {foreach from=$products  item=$product}
+                        <option value={$product->id_category}>{$product->names}</option>
+                    {/foreach}
+                    
                 </select>
             </div>
         </div> 

@@ -20,13 +20,19 @@
                 <ul class="navbar-nav d-flex">
                   <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="home">Home</a>
+                    
                   </li>
                   {if !isset($smarty.session.IS_ADMIN)}
                     <li class="nav-item">
+
                       <a class="nav-link" aria-current="page" href="login">Login</a>
                     </li>
                   {else} 
                     <li class="nav-item ml-auto">
+                    <a class="nav-link" aria-current="page" href="showFormCategory">Tipo de comida</a>
+                    </li>
+                    <li class="nav-item ml-auto">
+                    
                       <a class="nav-link" aria-current="page" href="logout">Logout ({$smarty.session.USER_EMAIL})</a>
                     </li>
                   {/if}

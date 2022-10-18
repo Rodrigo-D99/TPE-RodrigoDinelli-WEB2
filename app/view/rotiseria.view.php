@@ -8,9 +8,11 @@ class FoodsView {
         $this->smarty = new Smarty(); // inicio Smarty
     }
 
-    function showFoods($foods) {
+    function showFoods($foods, $products) {
         // asigno variables al tpl smarty
-        
+        if (isset($products)) {
+            $this->smarty->assign('products',$products); 
+        }
         $this->smarty->assign('count', count($foods)); 
         $this->smarty->assign('foods', $foods);
 
@@ -18,5 +20,18 @@ class FoodsView {
          // mostrar el tpl
        $this->smarty->display('rotiseria.tpl');
         
+    }
+    function showEditFoods($id,$products){
+        if (isset($products)) {
+            $this->smarty->assign('products',$products); 
+        }
+        $this->smarty->assign('id', $id);
+        $this->smarty->display('formEdit.tpl');
+    }
+    function showEditCategoryFoods($products){
+       
+        $this->smarty->assign('products',$products); 
+        
+        $this->smarty->display('formCategories.tpl');
     }
 }

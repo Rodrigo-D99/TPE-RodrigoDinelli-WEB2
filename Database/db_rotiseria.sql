@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 06-10-2022 a las 17:34:56
+-- Tiempo de generación: 18-10-2022 a las 04:59:35
 -- Versión del servidor: 10.4.24-MariaDB
 -- Versión de PHP: 8.1.6
 
@@ -29,20 +29,19 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `categories` (
   `id_category` int(11) NOT NULL,
-  `names` varchar(50) NOT NULL,
-  `descriptions` varchar(255) NOT NULL
+  `names` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Volcado de datos para la tabla `categories`
 --
 
-INSERT INTO `categories` (`id_category`, `names`, `descriptions`) VALUES
-(1, 'Milanesa de pollo', 'Una milanesa de pollo'),
-(2, 'Milanesa de ternera', 'Una milanesa de ternera'),
-(3, 'Pizza de Mozzarela', 'Contiene mozzarella y orégano'),
-(4, 'Pizza Calabreza', 'Contiene mozzarella y salame'),
-(5, 'Pizza Especial', 'Contiene mozzarella, paleta y morron');
+INSERT INTO `categories` (`id_category`, `names`) VALUES
+(1, 'Milanesa de pollo'),
+(2, 'pastas'),
+(3, 'Pizza de Mozzarela'),
+(4, 'Pizza Calabreza'),
+(5, 'Pizza Especial');
 
 -- --------------------------------------------------------
 
@@ -54,6 +53,7 @@ CREATE TABLE `foods` (
   `Id` int(11) NOT NULL,
   `names` varchar(50) NOT NULL,
   `price` decimal(10,0) NOT NULL,
+  `descriptions` varchar(255) NOT NULL,
   `id_category_fk` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -61,16 +61,38 @@ CREATE TABLE `foods` (
 -- Volcado de datos para la tabla `foods`
 --
 
-INSERT INTO `foods` (`Id`, `names`, `price`, `id_category_fk`) VALUES
-(1, 'Milanesa de pollo', '600', 1),
-(2, 'Milanesa de ternera', '630', 2),
-(3, 'Pizza de Mozzarela', '900', 3),
-(4, 'Pizza Calabreza', '1050', 4),
-(5, 'dasadsd', '232', 2),
-(6, 'dasadsd', '232', 2),
-(7, 'fsaf', '321', 2),
-(10, 'dasda', '13131', 2),
-(11, 'aaaaaa', '31231', 3);
+INSERT INTO `foods` (`Id`, `names`, `price`, `descriptions`, `id_category_fk`) VALUES
+(2, 'milanesa', '9999999999', 'dddddddddddddddddddddddddddd', 3),
+(3, 'Pizza de Mozzarela', '900', '', 3),
+(4, 'Pizza Calabreza', '1050', '', 4),
+(5, 'dasadsd', '232', '', 2),
+(6, 'dasadsd', '232', '', 2),
+(7, 'fsaf', '321', '', 2),
+(10, 'LIOOOOOOOOOOOOO', '20000', 'LIOOOOOOOOOOOO', 1),
+(11, 'aaaaaa', '31231', '', 3),
+(17, 'rodrigo', '22222222', 'aaaaaaaaaaaaaaaaaaaaaaaaaa', 1),
+(18, 'fsaf', '4515', 'fhdryuyui', 1),
+(19, 'adasda', '1321', 'asdasd', 2),
+(20, 'ramin', '20000', 'Elrama', 5);
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `users`
+--
+
+CREATE TABLE `users` (
+  `id` int(11) NOT NULL,
+  `email` varchar(200) NOT NULL,
+  `password` varchar(250) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `users`
+--
+
+INSERT INTO `users` (`id`, `email`, `password`) VALUES
+(1, 'admin@gmail.com', '$2a$12$lCjDCcup3KOntnsZUbsL8uvTGfDpJI.W/vRy65HKAB7fKrVjU8mRK');
 
 --
 -- Índices para tablas volcadas
@@ -90,6 +112,12 @@ ALTER TABLE `foods`
   ADD KEY `id_category_fk` (`id_category_fk`);
 
 --
+-- Indices de la tabla `users`
+--
+ALTER TABLE `users`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- AUTO_INCREMENT de las tablas volcadas
 --
 
@@ -103,7 +131,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT de la tabla `foods`
 --
 ALTER TABLE `foods`
-  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `Id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
+-- AUTO_INCREMENT de la tabla `users`
+--
+ALTER TABLE `users`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Restricciones para tablas volcadas
