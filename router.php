@@ -51,27 +51,32 @@ switch ($params[0]) {
         
         // obtengo el parametro de la acción
         $id = $params[1];
-        $RotiseriaController->showEditFoods($id);
+        $CategoryControler->showEditFoods($id);
         break;
     case'edit':
         $id = $params[1];
-        $RotiseriaController->EditFoods($id);
+        $CategoryControler->EditFoods($id);
         break;
-    
-    case 'showFormCategory':
-        
-            // obtengo el parametro de la acción
-           
-            $RotiseriaController->showEditCategoryFoods();
-            break;
+      
 
     case 'addCategories':
 
-        $RotiseriaController->addCategory();
+        $CategoryControler->addCategory();
         break;
+
     case'editCategory':
       
-        $RotiseriaController->EditCategoryFoods();
+        $CategoryControler->EditCategoryFoods();
+        break;
+    case'deleteCategory':
+        $id = $params[1];
+        $CategoryControler->DeleteCategoryFoods($id);
+        break;
+
+    case'comidasDeEseTipo':
+        $CategoryControler->formAddCategory();
+        $CategoryControler->ListFoods();
+        $CategoryControler->showEditCategoryFoods();
         break;
     default:
         echo('error por peton');

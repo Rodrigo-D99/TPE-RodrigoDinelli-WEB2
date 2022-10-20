@@ -37,29 +37,6 @@ class RotiseriaModel{
      }
 
 
-   public function updateFoods($data,$id) {
-        
-        $query = $this->db->prepare("UPDATE foods SET names = ?, price=? ,id_category_fk=?,descriptions=? WHERE id=?");
-        
-        $query->execute([$data->names,$data->price,$data->id_categories_fk,$data->descriptions,$id]);
-
-        
-    }
-    public function insertCategory($name) {
-        
-        $query = $this->db->prepare("INSERT INTO categories (names) VALUES (?)");
-        
-        $query->execute([$name]);
-
-        return $this->db->lastInsertId();
-        
-    }
-    public function updateCategoryFoods($data) {
-        
-        $query = $this->db->prepare("UPDATE categories SET names = ? WHERE id_category =?");
-        
-        $query->execute([$data->names,$data->id_categories_fk]);
-
-        
-    }
+  
+    
 }

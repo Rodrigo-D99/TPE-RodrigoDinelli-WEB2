@@ -29,7 +29,7 @@
                     </li>
                   {else} 
                     <li class="nav-item ml-auto">
-                    <a class="nav-link" aria-current="page" href="showFormCategory">Tipo de comida</a>
+                    <a class="nav-link" aria-current="page" href="comidasDeEseTipo">Tipo de comida</a>
                     </li>
                     <li class="nav-item ml-auto">
                     
