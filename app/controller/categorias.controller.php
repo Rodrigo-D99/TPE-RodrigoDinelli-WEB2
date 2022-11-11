@@ -1,7 +1,7 @@
 <?php
 require_once './app/model/categorias.model.php';
 require_once './app/view/categorias.view.php';
-
+require_once './app/model/rotiseria.model.php';
 class Cat_controller{
 
     private $view;
@@ -10,6 +10,7 @@ class Cat_controller{
     public function __construct(){
         $this->model= new Cat_model();
         $this->view= new Cat_view();
+        $this->model_Roti = new RotiseriaModel();
         
     }
 ///////////////////////////////////////////////////
@@ -21,8 +22,9 @@ class Cat_controller{
     }
 ///////////////////////////////////////////////////
     public function showEditFoods($id){
+        $foods = $this->model_Roti->getAllFoods();
         $products= $this->model->Get_Categ();
-        $this->view->showEditFoods($id,$products);
+        $this->view->showEditFoods($id,$products,$foods);
       
     }
 ///////////////////////////////////////////////////
@@ -50,14 +52,14 @@ class Cat_controller{
             $data->id_categories_fk= $_POST['id_categories_fk'];
            
         $this->model->updateCategoryFoods($data);
-        header("Location: ". BASE_URL);
+        header("Location: ". BASE_URL . "comidasDeEseTipo" );
     }
 ///////////////////////////////////////////////////
     public function DeleteCategoryFoods($id){
         var_dump($id);
         $this->model->deleteCategoryById($id);
     
-        
+        header("Location: ". BASE_URL . "comidasDeEseTipo");
     }
 ///////////////////////////////////////////////////
     public function addCategory(){
@@ -65,7 +67,7 @@ class Cat_controller{
         $name = $_POST['names'];
         
         $id = $this->model->insertCategory($name);
-        header("Location: ". BASE_URL);
+        header("Location: ". BASE_URL . "comidasDeEseTipo");
     }
 ///////////////////////////////////////////////////
     public function formAddCategory(){

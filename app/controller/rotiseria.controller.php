@@ -36,6 +36,16 @@ class RotiseriaController {
         
  
     }
+///////////////////////////////////////////////////
+    function FoodDetails($id){
+        $FoodDetail=$this->model->detailsFoods($id);
+        $this->view->ShowDetail($FoodDetail);
+    }
+///////////////////////////////////////////////////
+    function CatDetails($id){
+        $CatDetail=$this->model->detailsCatFoods($id);
+        $this->view->ShowDetailCategory($CatDetail);
+    }
 ///////////////////////////////////////////////////    
     public function deleteFoods($id){
         $this->model->deleteFoodsById($id);

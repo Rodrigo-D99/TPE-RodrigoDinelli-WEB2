@@ -6,7 +6,8 @@
     {foreach from=$foods item=$food }
         <li class='
         list-group-item d-flex justify-content-between align-items-center'>
-        <span> <b>{$food->names}</b> --  ${$food->price} Contiene: {$food->descriptions}</span>
+        <a href="details/{$food->id}">{$food->names}</a>
+        
         
        </li>
     {/foreach}
@@ -17,10 +18,11 @@
         {foreach from=$foods item=$food }
             
             <li class='list-group-item d-flex justify-content-between align-items-center'>
-            <span> <b>{$food->names}</b> --  ${$food->price} Contiene: {$food->descriptions} /// Es: {$food->product}</span>
+            <a href="details/{$food->id}" class='btn btn-info'>{$food->names}</a>
+           
             <div>
-            <a href='showEdit/{$food->Id}' type='button' class='btn btn-success'>Editar</a>
-            <a href='delete/{$food->Id}' type='button' class='btn btn-danger'>Borrar</a> 
+            <a href='showEdit/{$food->id}' type='button' class='btn btn-success'>Editar</a>
+            <a href='delete/{$food->id}' type='button' class='btn btn-danger'>Borrar</a> 
             </div>
             </li>
         {/foreach}

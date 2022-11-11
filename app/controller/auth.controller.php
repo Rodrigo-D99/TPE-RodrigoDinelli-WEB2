@@ -11,11 +11,11 @@ class AuthController{
         $this->view = new authView();
         
     }
-
+///////////////////////////////////////////////////
     public function showFormLogin(){
         $this->view->showFormLogin();
     }
-
+///////////////////////////////////////////////////
     public function validationUsers(){
 
         $email=$_POST['email'];
@@ -37,12 +37,12 @@ class AuthController{
             $this->view->showFormLogin("El usuario o la contraseña no existe.");
         }
     }
-
+///////////////////////////////////////////////////
     public function logout(){
         session_start();
         session_destroy();
 
         header("Location: " . BASE_URL);
     }
-
+///////////////////////////////////////////////////
 }

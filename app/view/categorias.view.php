@@ -3,11 +3,12 @@ require_once './libs/smarty-4.2.1/libs/Smarty.class.php';
 
 
 class Cat_view{
-private $smarty;
+    
+    private $smarty;
 
-public function __construct(){
-    $this->smarty = new Smarty();
-}
+    public function __construct(){
+        $this->smarty = new Smarty();
+    }
 ///////////////////////////////////////////////////
     public function showCateg($products){
         var_dump($products);
@@ -15,10 +16,11 @@ public function __construct(){
         $this->smarty->display('rotiseria.tpl');
     }
 ///////////////////////////////////////////////////
-    public function showEditFoods($id,$products){
+    public function showEditFoods($id,$products,$foods){
         if (isset($products)) {
 
             $this->smarty->assign('products',$products); 
+            $this->smarty->assign('foods',$foods); 
         }
         
         $this->smarty->assign('id', $id);
@@ -39,11 +41,12 @@ public function __construct(){
         $this->smarty->display('listFoods.tpl');
     }
 ///////////////////////////////////////////////////
-public function showAddCategoryFoods(){
-    
-    $this->smarty->assign('action','addCategories');
-     
-    $this->smarty->display('header.tpl');
-    $this->smarty->display('formCategories.tpl');
-}
+    public function showAddCategoryFoods(){
+        
+        $this->smarty->assign('action','addCategories');
+        
+        $this->smarty->display('header.tpl');
+        $this->smarty->display('formCategories.tpl');
+    }
+///////////////////////////////////////////////////
 }

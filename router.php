@@ -47,6 +47,16 @@ switch ($params[0]) {
         $id = $params[1];
         $RotiseriaController->deleteFoods($id);
         break;
+    case 'details':
+        $RotiseriaController = new RotiseriaController();
+        $id = $params[1];
+        $RotiseriaController->FoodDetails($id);
+        break;
+    case 'detailsCatFoods':
+        $RotiseriaController = new RotiseriaController();
+        $id = $params[1];
+        $RotiseriaController->CatDetails($id);
+        break;
     case 'showEdit':
         
         // obtengo el parametro de la acción

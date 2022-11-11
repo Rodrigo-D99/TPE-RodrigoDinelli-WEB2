@@ -22,4 +22,15 @@ class FoodsView {
         
     }
 ///////////////////////////////////////////////////   
+    function ShowDetail($FoodDetail){
+        $this->smarty->assign('detail',"Detalles de la comida");
+        $this->smarty->assign('details',$FoodDetail);
+        $this->smarty->display('detailFood.tpl'); // muestro el template   
+    }
+///////////////////////////////////////////////////}
+    Function ShowDetailCategory($CatDetail){
+    $this->smarty->assign('detail',"Detalles de la categoria");
+    $this->smarty->assign('details',$CatDetail);
+    $this->smarty->display('detailCatFood.tpl'); // muestro el template   
+}
 }

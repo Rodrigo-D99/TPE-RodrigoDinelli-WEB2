@@ -7,7 +7,7 @@ class authView {
     public function __construct() {
         $this->smarty = new Smarty(); // inicio Smarty
     }
-
+///////////////////////////////////////////////////
     function showFormLogin($error=null) {
         // asigno variables al tpl smarty
        $this->smarty->assign("error", $error);
@@ -15,4 +15,5 @@ class authView {
        $this->smarty->display('FormLogin.tpl');
         
     }
+///////////////////////////////////////////////////
 }

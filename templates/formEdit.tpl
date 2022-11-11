@@ -6,7 +6,7 @@
         <div class="col-9">
             <div class="form-group">
                 <label>Ingresar nombre de la comida</label>
-                <input name="names" type="text" class="form-control">
+                <input name="names" type="text" class="form-control" placeholder=" {foreach from=$foods  item=$food}{$food->id} {/foreach}">
             </div>
         </div>
         

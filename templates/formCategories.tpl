@@ -31,6 +31,7 @@
     
     {if $action=='editCategory'}
         <button type="submit" class="btn btn-primary mt-2">Editar</button>
+        <a href='editCategory/{$product->id_category}' type='button' class='btn btn-success'>Editar</a>
         <a href='deleteCategory/{$product->id_category}' type='button' class='btn btn-danger'>Borrar</a>
     {else}
         <button type="submit" class="btn btn-primary mt-2">Agregar</button>
