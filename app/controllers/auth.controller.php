@@ -2,11 +2,7 @@
 
 require_once './app/views/login.view.php';
 require_once './app/models/user.model.php';
-require_once './helpers/auth.helper.php';
-
-
-
-
+require_once './app/helpers/auth.helper.php';
 class AuthController{
     private $view;
     private $model;
@@ -28,9 +24,11 @@ class AuthController{
             $email = $_POST['email'];
             $password = $_POST['password'];
             $user = $this->model->user($email);
+            
 
             if($user && password_verify($password, ($user->password))){
                 $this->authHelper->login($user);
+                
                 header("Location: " . BASE_URL); 
                 
             }else{

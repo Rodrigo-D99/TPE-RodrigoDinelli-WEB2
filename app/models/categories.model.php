@@ -1,13 +1,12 @@
 <?php
 
 
-
+require_once './app/helpers/database.helper.php';
 class CategoriesModel{
     private $db;
 
     function __construct(){
-        $this->db=new PDO('mysql:host=localhost;'.'dbname=db_rotiseria;charset=utf8', 'root', '', array(
-            PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $this->db = $this->db = DataBase::dataBase();
     }
 
 

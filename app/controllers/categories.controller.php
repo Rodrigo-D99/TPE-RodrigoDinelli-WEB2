@@ -2,7 +2,7 @@
 
 require_once './app/views/categories.view.php';
 require_once './app/models/categories.model.php';
-require_once './helpers/auth.helper.php';
+require_once './app/helpers/auth.helper.php';
 
 
 

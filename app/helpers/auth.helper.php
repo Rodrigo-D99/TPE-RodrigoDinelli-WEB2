@@ -1,6 +1,5 @@
 <?php
 
-
 class AuthHelper{
 
     function __construct(){
@@ -10,7 +9,7 @@ class AuthHelper{
     }
 
     function login($user){
-        $_SESSION['USER_ID'] = $user->id_user;
+        $_SESSION['USER_ID'] = $user->id;
         $_SESSION['USER_EMAIL'] = $user->email;
 
     }

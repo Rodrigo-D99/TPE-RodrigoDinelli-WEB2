@@ -1,12 +1,12 @@
 <?php
 
-
+require_once './app/helpers/database.helper.php';
 class ProdModel{
     private $db;
 
     function __construct(){
-
-       $this->db =new PDO('mysql:host=localhost;'.'dbname=db_rotiseria;charset=utf8', 'root', '');
+        $this->db = $this->db = DataBase::dataBase();
+       
     }
 
     function getAll(){

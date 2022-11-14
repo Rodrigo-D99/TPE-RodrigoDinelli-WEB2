@@ -3,7 +3,7 @@
 <nav class="navbar navbar-expand-lg navbar-dark">
     <div class="container-fluid shadow">
         <a class="navbar-brand" href="">  
-            <img src="./images/logo.png" alt="Gulp! cafetería" id="logo">
+            <img src="./images/logo.png" alt="Buenos sabores! rotiseria Tudai" id="logo">
         </a> 
     </div>
 </nav>
@@ -23,5 +23,5 @@
     </form>  
 </div>
 </body>
-</html>  
+</html>   
 

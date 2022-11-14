@@ -2,7 +2,7 @@
 require_once './app/views/foods.view.php';
 require_once './app/models/foods.model.php';
 require_once './app/models/categories.model.php';
-require_once './helpers/auth.helper.php';
+require_once './app/helpers/auth.helper.php';
 
 class ProdController{
     private $view;
@@ -38,8 +38,8 @@ class ProdController{
                 $this->view->error('No hay productos disponibles para esta categoria :('); 
             }else{
                 foreach ($categories as $category) {
-                    if($products[0]->id_categoria == $category->id_categoria){
-                        $actualCategory = $category->categoria;
+                    if($products[0]->id_category_fk == $category->id_category){
+                        $actualCategory = $category->category;
                         $this->view->filtered($products, $categories, $actualCategory); 
                     }
                 }
