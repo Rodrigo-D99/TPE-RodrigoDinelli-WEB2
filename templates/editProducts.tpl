@@ -12,6 +12,7 @@
             <option value="{$category->id_category}">{$category->category}</option>
           {/foreach}
         </select>
+        <input type="number" class="form-control card-title mb-3" name="price" placeholder="nuevo precioad">
         <textarea class="form-control card-text mb-2" placeholder="nueva descripción" name="description"></textarea>
        <button class="btn btn-success" type="submit">Agregar</button>
     </form>  
