@@ -9,7 +9,7 @@
         <select class="form-select card-subtitle mb-3" aria-label="Default select example" name="category">
           <option value=""><-Seleccionar categoria-></option>
           {foreach from=$categories item=$category}
-            <option value="{$category->id_category}">{$category->names}</option>
+            <option value="{$category->id_category}">{$category->category}</option>
           {/foreach}
         </select>
         <textarea class="form-control card-text mb-2" placeholder="nueva descripción" name="description"></textarea>
