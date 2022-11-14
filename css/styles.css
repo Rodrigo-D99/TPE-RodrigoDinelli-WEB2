@@ -1,0 +1,48 @@
+body {
+    background-color:   #100c0c ;
+    margin: 0;
+}
+
+nav{
+    background-color: #140404;
+}
+
+nav .container-fluid a img {
+ height: 30% ;
+ width: 30%;
+}
+
+.banner {
+    width: 100% ;
+    height: 410px ;
+}
+
+h1, h2, .card-title, .card-text, .card-body a, .card-header, aside .list-group-item , aside button, aside a{
+    color:  #8e3200 ;
+}
+
+.card-header{
+    background-color: #080202;
+}
+
+.card, .card-body, aside .list-group-item, aside button{
+    background-color:  #210a05  ;
+
+}
+
+aside button{
+    border: #1c0804;
+}
+
+aside button:hover, aside li a:hover, .card-body p a:hover{
+    color: #7c3800;  
+    transition: all .4s;
+}
+
+.card-body a, aside a{
+    text-decoration: none;
+}
+
+ 
+
+
