@@ -24,11 +24,10 @@ class AuthController{
             $email = $_POST['email'];
             $password = $_POST['password'];
             $user = $this->model->user($email);
-            
 
             if($user && password_verify($password, ($user->password))){
-                $this->authHelper->login($user);
                 
+                $this->authHelper->login($user);  
                 header("Location: " . BASE_URL); 
                 
             }else{

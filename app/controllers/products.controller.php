@@ -98,7 +98,7 @@ class ProdController{
     }
 
     function addProduct(){
-        if(!empty($_POST['product']) && !empty($_POST['category']) && !empty($_POST['description'])&& !empty($price = $_POST['price'])){
+        if(!empty($_POST['product']) && !empty($_POST['category']) && !empty($_POST['description'])&& !empty($_POST['price'])){
             $product = $_POST['product'];
             $category = $_POST['category'];
             $descriptions = $_POST['description'];
